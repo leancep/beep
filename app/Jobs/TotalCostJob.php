@@ -35,8 +35,12 @@ class TotalCostJob implements ShouldQueue
     public function handle()
     {
        $orders = Order::all();
+       $total = 0;
        foreach($orders as $order){
-            echo(' Total Cost of order #' . $order->id . ': $' . $order->total(). PHP_EOL);
+            $cost = $order->total();
+            echo(' Total Cost of order #' . $order->id . ': $' . $cost. PHP_EOL);
+            $total = $total + $cost;
         }
+        echo(' Total Cost of ALL ORDERS: $' . $total. PHP_EOL);
     }
 }
