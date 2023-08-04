@@ -9,19 +9,20 @@ use Livewire\Component;
 
 class Create extends Component
 {
-    public $customer_name, $order_ref, $product_id, $quantity, $product_name;
+    public $customer_name;
+    public $order_ref;
+    public $product_id;
+    public $quantity;
     public $products  = [];
     public $productOptions = [];
 
 
     public function addProduct()
     {
-
-       // dd($this->order_ref, $this->customer_name, $this->product_id, $this->quantity);
         $product = Product::find($this->product_id);
         $this->products[] = ['id'=> $this->product_id, 'product_name' => $product->name, 'quantity' => $this->quantity];
+        $this->reset(['product_id', 'quantity']);
     }
-
 
     public function mount()
     {
@@ -63,10 +64,6 @@ class Create extends Component
    
     public function render()
     {
-       // dd($this->products, $this->productOptions);
-      /*  foreach($this->products as $p){
-            dd($p['product_name']);
-        }*/
         return view('livewire.orders.create');
     }
 }

@@ -31,7 +31,4 @@ Route::middleware([
     Route::resource('products', ProductController::class);
     Route::resource('orders', OrderController::class);
 
-
- 
-Route::get('/counter', Counter::class);
 });
