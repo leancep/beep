@@ -2,10 +2,10 @@
 
 Pasos para levantar el proyecto:
 1- Ejecutar: composer install
-2- Renombrar el archivo .env.example a .env
-3- Ejecutar: php artisan key:generate 
-4- Setear en el .env las variables de entorno para conectarse a una base de datos sql
-5- Ejecutar: npm install
+2- Ejecutar: npm install
+3- Renombrar el archivo .env.example a .env
+4- Ejecutar: php artisan key:generate 
+5- Setear en el .env las variables de entorno para conectarse a una base de datos sql (DB_CONNECTION , DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 6- Ejecutar: php artisan migrate
 7- Ejecutar: php artisan db:seed  (Esto carga la DB con 10 productos y 20 ordenes con sus "lines")
 8- Ejecutar: npm run dev
